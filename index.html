@@ -18,8 +18,8 @@
   </head>
   <body>
     <div class="headerDate">
-      <h2 class="headerTitle">Wednessday</h2>
-      <p class="headerText">3 December</p>
+      <h2 id="weekday" class="headerTitle">Wednessday</h2>
+      <p id="date" class="headerText">3 December</p>
     </div>
     <form class="searchForm">
       <input
@@ -44,7 +44,7 @@
       </div>
     </form>
     <div class="containerBtn">
-      <button class="btnTasks isActive borderRight">All</button>
+      <button class="btnTasks borderRight isActive">All</button>
       <button class="btnTasks">Active</button>
       <button class="btnTasks borderLeft">Completed</button>
     </div>
@@ -81,8 +81,8 @@
         </svg>
       </button>
     </div>
-    <div class="overlay">
-      <div class="modalContainer">
+    <div class="overlay hidden">
+      <div class="modalContainer hidden">
         <div class="line"></div>
         <form class="formNewTask">
           <input type="text" name="description" placeholder="Description" />
