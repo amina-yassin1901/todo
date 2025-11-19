@@ -103,7 +103,7 @@ body {
 }
 
 .isActive::before {
-  content: url(assets/icons/check_18dp_1D192B_FILL0_wght400_GRAD0_opsz20.svg);
+  content: url(../assets/icons/check_18dp_1D192B_FILL0_wght400_GRAD0_opsz20.svg);
   width: 18px;
   height: 18px;
 }
