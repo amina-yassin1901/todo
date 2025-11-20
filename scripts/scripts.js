@@ -9,6 +9,7 @@ const addTaskBtn = document.querySelector("#addTaskBtn");
 const doneTaskBtn = document.querySelector("#doneTaskBtn");
 const allBtn = document.querySelector("#allBtn");
 const activeTaskBtn = document.querySelector("#activeTaskBtn");
+const error = document.querySelector("#error");
 
 const today = new Date();
 weekdayEl.textContent = today.toLocaleDateString("en-Uk", {
@@ -72,10 +73,7 @@ const getTodos = () => {
   return localStorageTodos;
 };
 
-const createTodo = () => {
-  const descriptInp = document.querySelector("#descriptInp").value;
-  const dateInp = document.querySelector("#dateInp").value;
-  const timeInput = document.querySelector("#time").value;
+const createTodo = (descriptInp, dateInp, timeInput) => {
   const localStorageTodos = getTodos();
   const newTodo = {
     id: "todo_" + Math.random().toString(16).slice(2),
@@ -136,8 +134,19 @@ const renderTodos = (todosList) => {
 };
 
 addTaskBtn.addEventListener("click", () => {
-  createTodo();
+  const descriptInp = document.querySelector("#descriptInp").value.trim();
+  const dateInp = document.querySelector("#dateInp").value.trim();
+  const timeInput = document.querySelector("#time").value.trim();
+  if (!descriptInp || !dateInp || !timeInput) {
+    error.textContent = "Please fill in all fields";
+    return;
+  }
+
+  error.textContent = "";
+  createTodo(descriptInp, dateInp, timeInput);
   renderTodos();
   overlay.classList.add("hidden");
   modal.classList.add("hidden");
+  const form = document.querySelector(".formNewTask");
+  form.reset();
 });
