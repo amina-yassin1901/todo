@@ -44,28 +44,11 @@
       </div>
     </form>
     <div class="containerBtn">
-      <button class="btnTasks borderRight isActive">All</button>
-      <button class="btnTasks">Active</button>
-      <button class="btnTasks borderLeft">Completed</button>
+      <button id="allBtn" class="btnTasks borderRight isActive">All</button>
+      <button id="activeTaskBtn" class="btnTasks">Active</button>
+      <button id="doneTaskBtn" class="btnTasks borderLeft">Done</button>
     </div>
-    <ul class="containerTask">
-      <li class="todoBlock">
-        <label class="checkbox" for="checkbox">
-          <input type="checkbox" name="checkbox" id="checkbox" />
-          <span class="material-symbols-rounded checkbox__check-icon">
-            <svg>
-              <use
-                href="assets/icons/check_18dp_1D192B_FILL0_wght400_GRAD0_opsz20.svg"
-              ></use>
-            </svg>
-          </span>
-        </label>
-        <div class="todoBlockData">
-          <p class="todoBlockDateText">10 January, 11:30</p>
-          <h3 class="todoBlockTitle">Feed the cat</h3>
-        </div>
-      </li>
-    </ul>
+    <ul class="containerTask"></ul>
     <div class="newTaskBtnContainer">
       <button class="newTask">
         <svg
@@ -85,8 +68,15 @@
       <div class="modalContainer hidden">
         <div class="line"></div>
         <form class="formNewTask">
-          <input type="text" name="description" placeholder="Description" />
-          <input type="text" placeholder="Date" />
+          <input
+            id="descriptInp"
+            type="text"
+            name="description"
+            placeholder="Description"
+            required
+          />
+          <input id="dateInp" type="date" placeholder="Date" />
+          <input type="time" name="time" id="time" />
         </form>
         <div class="remindMe">
           <p class="remindMeText">Remind me</p>
@@ -104,7 +94,7 @@
           </div>
         </div>
         <div class="modalBtnContainer">
-          <button class="addBtn modalBtn">Add task</button>
+          <button id="addTaskBtn" class="addBtn modalBtn">Add task</button>
           <button class="cancelBtn modalBtn">Cancel</button>
         </div>
       </div>

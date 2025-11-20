@@ -124,19 +124,17 @@ input[type="search"]::-webkit-search-cancel-button {
   border-left: none;
 }
 
-.containerTask {
-  background-color: rgba(103, 80, 164, 0.05);
-  padding: 8px;
-  border-radius: 16px;
-  cursor: pointer;
-}
-
 .todoBlock {
+  background-color: rgba(103, 80, 164, 0.05);
   display: flex;
   flex-direction: row;
   justify-content: start;
   align-items: center;
   gap: 8px;
+  margin-bottom: 12px;
+  border-radius: 16px;
+  cursor: pointer;
+  padding: 8px;
 }
 
 .checkbox {
